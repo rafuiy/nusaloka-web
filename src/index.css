@@ -1,0 +1,271 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand palette */
+  --primary: #6367ff;
+  --primary-light: #e5e6ff;
+
+  --secondary: #ffce63;
+  --secondary-light: #fff7e5;
+
+  --tertiary: #63ffbe;
+  --tertiary-light: #e5fff4;
+
+  --danger: #ff6385;
+  --danger-light: #ffe5eb;
+
+  /* Neutral palette */
+  --n50: #ffffff;
+  --n100: #eceff2;
+  --n200: #d5dbe2;
+  --n300: #b0bbc9;
+  --n400: #8697aa;
+  --n500: #677a90;
+  --n600: #526377;
+  --n700: #434f61;
+  --n800: #3a4552;
+  --n900: #343b46;
+  --n950: #16191e;
+
+  /* Existing semantic variables */
+  --text: var(--n500);
+  --text-h: var(--n950);
+  --bg: var(--n50);
+  --border: var(--n100);
+  --code-bg: var(--secondary-light);
+  --accent: var(--primary);
+  --accent-bg: var(--primary-light);
+  --accent-border: var(--primary);
+  --social-bg: var(--secondary-light);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: 'Nunito Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Nunito Sans', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* Typography tokens: font - weight - size/line */
+  --ty-display-large: 400 64px/72px var(--heading);
+  --ty-display-medium: 400 48px/56px var(--heading);
+  --ty-display-small: 400 40px/48px var(--heading);
+
+  --ty-headline-large: 600 32px/40px var(--heading);
+  --ty-headline-medium: 600 24px/36px var(--heading);
+  --ty-headline-small: 600 20px/32px var(--heading);
+
+  --ty-title-large: 500 20px/28px var(--heading);
+  --ty-title-medium: 700 16px/24px var(--heading);
+  --ty-title-small: 700 14px/20px var(--heading);
+
+  --ty-label-large: 500 16px/24px var(--sans);
+  --ty-label-medium: 500 14px/20px var(--sans);
+  --ty-label-small: 500 12px/16px var(--sans);
+
+  --ty-body-large: 400 16px/24px var(--sans);
+  --ty-body-medium: 400 14px/20px var(--sans);
+  --ty-body-small: 400 12px/16px var(--sans);
+
+  --ty-ls-display-large: 0px;
+  --ty-ls-display-medium: 0px;
+  --ty-ls-display-small: 0px;
+
+  --ty-ls-headline-large: 0px;
+  --ty-ls-headline-medium: 0px;
+  --ty-ls-headline-small: 0px;
+
+  --ty-ls-title-large: 0.4px;
+  --ty-ls-title-medium: 0.16px;
+  --ty-ls-title-small: 0.12px;
+
+  --ty-ls-label-large: 0.2px;
+  --ty-ls-label-medium: 0.4px;
+  --ty-ls-label-small: 0.6px;
+
+  --ty-ls-body-large: 0px;
+  --ty-ls-body-medium: 0.08px;
+  --ty-ls-body-small: 0.2px;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* Biar bisa dipanggil langsung di Tailwind */
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+
+  --color-tertiary: var(--tertiary);
+  --color-tertiary-light: var(--tertiary-light);
+
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+
+  --color-n50: var(--n50);
+  --color-n100: var(--n100);
+  --color-n200: var(--n200);
+  --color-n300: var(--n300);
+  --color-n400: var(--n400);
+  --color-n500: var(--n500);
+  --color-n600: var(--n600);
+  --color-n700: var(--n700);
+  --color-n800: var(--n800);
+  --color-n900: var(--n900);
+  --color-n950: var(--n950);
+}
+
+@layer utilities {
+  .ty-display-large {
+    font: var(--ty-display-large);
+    letter-spacing: var(--ty-ls-display-large);
+  }
+  .ty-display-medium {
+    font: var(--ty-display-medium);
+    letter-spacing: var(--ty-ls-display-medium);
+  }
+  .ty-display-small {
+    font: var(--ty-display-small);
+    letter-spacing: var(--ty-ls-display-small);
+  }
+  .ty-headline-large {
+    font: var(--ty-headline-large);
+    letter-spacing: var(--ty-ls-headline-large);
+  }
+  .ty-headline-medium {
+    font: var(--ty-headline-medium);
+    letter-spacing: var(--ty-ls-headline-medium);
+  }
+  .ty-headline-small {
+    font: var(--ty-headline-small);
+    letter-spacing: var(--ty-ls-headline-small);
+  }
+  .ty-title-large {
+    font: var(--ty-title-large);
+    letter-spacing: var(--ty-ls-title-large);
+  }
+  .ty-title-medium {
+    font: var(--ty-title-medium);
+    letter-spacing: var(--ty-ls-title-medium);
+  }
+  .ty-title-small {
+    font: var(--ty-title-small);
+    letter-spacing: var(--ty-ls-title-small);
+  }
+  .ty-label-large {
+    font: var(--ty-label-large);
+    letter-spacing: var(--ty-ls-label-large);
+  }
+  .ty-label-medium {
+    font: var(--ty-label-medium);
+    letter-spacing: var(--ty-ls-label-medium);
+  }
+  .ty-label-small {
+    font: var(--ty-label-small);
+    letter-spacing: var(--ty-ls-label-small);
+  }
+  .ty-body-large {
+    font: var(--ty-body-large);
+    letter-spacing: var(--ty-ls-body-large);
+  }
+  .ty-body-medium {
+    font: var(--ty-body-medium);
+    letter-spacing: var(--ty-ls-body-medium);
+  }
+  .ty-body-small {
+    font: var(--ty-body-small);
+    letter-spacing: var(--ty-ls-body-small);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
